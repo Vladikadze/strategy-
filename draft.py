@@ -30,7 +30,7 @@ def use_openai_vision(image_path):
         base64_image = image_to_base64(image_path)
 
         response = openai.chat.completions.create(
-            model="gpt-4-vision-preview",
+            model="gpt-4o",
             messages=[
                 {
                     "role": "user",
