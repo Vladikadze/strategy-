@@ -1,1 +1,35 @@
 # strategy-
+               +-----------------------+
+               |  User uploads image   |
+               +----------+------------+
+                          |
+                          v
+             +------------+------------+
+             | User selects file_type |
+             +------------+------------+
+                          |
+         +----------------+-------------------+
+         |                                    |
+  +------v------+                      +------v------+
+  | file_type = |                      | file_type = |
+  |  "printed"  |                      | "handwritten"|
+  +-------------+                      +-------------+
+         |                                    |
+         v                                    v
+Run local OCR                         Run OpenAI Vision OCR
+         |                                    |
+  Check if satisfactory                       |
+         |                                    |
+   +-----+-----+                              |
+   | Yes       | No                           |
+   v           v                              |
+Accept     Run OpenAI Vision OCR <------------+
+               |
+               v
+         Check if satisfactory
+               |
+         +-----+-----+
+         | Yes       | No
+         v           v
+       Accept     Return failure
+
